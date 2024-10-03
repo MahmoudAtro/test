@@ -1,22 +1,35 @@
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
-  }
-  
-  .container {
-    text-align: center;
-  }
-  
-  #image {
-    display: none;
-    margin-top: 20px;
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #ccc;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  background-color: #f0f0f0;
+}
+
+/* تقييد منطقة العرض والارتفاع */
+body::before {
+  content: '';
+  width: 500px;
+  height: 700px;
+  position: absolute;
+  z-index: -1; /* يظهر خلف الأزرار */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  position: absolute;
+}
+.container {
+  text-align: center;
+}
+
+#image {
+  display: none;
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ccc;
+}
